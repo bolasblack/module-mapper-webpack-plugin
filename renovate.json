@@ -1,4 +1,3 @@
 {
-  "extends": ["github>bolasblack/js-toolconfs:renovate"],
-  "baseBranches": ["develop"]
+  "extends": ["github>bolasblack/js-toolconfs:renovate"]
 }
