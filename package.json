@@ -30,7 +30,7 @@
     "webpack": "^4.39.2"
   },
   "dependencies": {
-    "@c4605/toolconfs": "^4.5.2",
+    "@c4605/toolconfs": "^4.6.0",
     "@types/webpack": "^4.39.0"
   },
   "peerDependencies": {
