@@ -27,11 +27,11 @@
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.2"
+    "webpack": "^4.39.3"
   },
   "dependencies": {
     "@c4605/toolconfs": "^4.6.0",
-    "@types/webpack": "^4.39.0"
+    "@types/webpack": "^4.39.1"
   },
   "peerDependencies": {
     "webpack": "^4"
