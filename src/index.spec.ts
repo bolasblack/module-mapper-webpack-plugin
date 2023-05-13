@@ -13,7 +13,7 @@ describe('ModuleMapperWebpackPlugin', () => {
         ) {
           return {
             request: replacePath(
-              reqPath =>
+              (reqPath) =>
                 path.resolve(
                   path.resolve(d.context, reqPath),
                   '../file.overlay.js',
@@ -32,12 +32,15 @@ describe('ModuleMapperWebpackPlugin', () => {
   })
 })
 
-function isFileJs(m: webpack.Stats.FnModules) {
-  return /\/file\.js\b/.test(m.name) && /\/file\.overlay\.js\b/.test(m.issuer!)
+function isFileJs(m: webpack.StatsModule): boolean {
+  if (m.name == null || m.issuer == null) return false
+  return /\/file\.js\b/.test(m.name) && /\/file\.overlay\.js\b/.test(m.issuer)
 }
 
-function runWebpack(options: ModuleMapperWebpackPlugin.ConstructOptions) {
-  return new Promise<webpack.Stats.ToJsonOutput>((resolve, reject) => {
+function runWebpack(
+  options: ModuleMapperWebpackPlugin.ConstructOptions,
+): Promise<webpack.StatsCompilation> {
+  return new Promise((resolve, reject) => {
     webpack(
       {
         mode: 'none',
@@ -55,12 +58,12 @@ function runWebpack(options: ModuleMapperWebpackPlugin.ConstructOptions) {
           return
         }
 
-        if (stats.hasErrors()) {
-          reject(new Error(stats.toString()))
+        if (stats!.hasErrors()) {
+          reject(new Error(stats!.toString()))
           return
         }
 
-        resolve(stats.toJson())
+        resolve(stats!.toJson())
       },
     )
   })
