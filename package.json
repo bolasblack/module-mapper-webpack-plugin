@@ -33,6 +33,6 @@
     "@c4605/toolconfs": "^5.2.2"
   },
   "peerDependencies": {
-    "webpack": "^4"
+    "webpack": "^4 || ^5.82.1"
   }
 }
