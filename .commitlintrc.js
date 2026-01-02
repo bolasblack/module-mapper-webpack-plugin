@@ -1,4 +1,7 @@
 module.exports = {
-  extends: ['@c4605/toolconfs/commitlintrc'],
-  rules: {},
-}
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    "subject-case": [0],
+    "scope-case": [0],
+  },
+};

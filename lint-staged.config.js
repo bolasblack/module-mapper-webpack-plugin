@@ -1,1 +1,4 @@
-module.exports = require('@c4605/toolconfs/lint-staged.config')
+module.exports = {
+  "*.{ts,tsx,js,jsx}": ["prettier --write", "eslint"],
+  "*.{css,scss,sass,less,md,mdx}": ["prettier --write"],
+};

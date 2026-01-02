@@ -8,6 +8,7 @@ gh-pages
 coverage
 .gh-pages-git
 .rpt2_cache
+.claude/settings.local.json
 *.tsbuildinfo
 *.log
 *.tgz

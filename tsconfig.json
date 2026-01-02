@@ -1,9 +1,21 @@
 {
-  "extends": "@c4605/toolconfs/tsconfig-node",
   "compilerOptions": {
-    "suppressImplicitAnyIndexErrors": false,
+    "module": "commonjs",
+    "target": "esnext",
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "declarationMap": true,
     "skipLibCheck": true,
     "outDir": "lib"
   },
-  "exclude": ["./lib"]
+  "exclude": ["node_modules", "./lib"]
 }
